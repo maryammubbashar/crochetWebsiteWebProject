@@ -56,11 +56,5 @@ Learning Outcomes
 * Database CRUD operations using PostgreSQL
 * Debugging and error handling in full-stack applications
 
-Future Enhancements
-
-* Role-based access control (Admin/User)
-* Improved UI/UX
-* Profile management
-* Deployment to cloud platforms
 
 
