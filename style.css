@@ -1,0 +1,316 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4ece8;
+
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 50px;
+  background-color: #fdeedc; 
+  flex-wrap: wrap; }
+
+  .hero-text,
+  .hero-image {
+    flex: 1;        
+    min-width: 300px; 
+  }
+
+  .hero-text {
+    h1 {
+      font-size: 3rem;
+      color: #6b4f4f;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #4b3a3a;
+      line-height: 1.6;
+    }
+  }
+
+  .hero-image {
+    text-align: center;
+
+    img {
+      width: 100%;      
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  }
+
+
+
+header {
+  background-color: #6b4f4f;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links { display: flex; gap: 25px; }
+.auth-buttons { display: flex; gap: 10px; }
+
+header a { color: white; text-decoration: none; font-weight: bold; position: relative; }
+header a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: black;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+header a:hover::after { width: 100%; }
+
+header button {
+  padding: 6px 12px;
+  background: white;
+  color: #6b4f4f;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* MODALS */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  width: 300px;
+  padding: 20px;
+  margin: 120px auto;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 6px;
+  margin: 8px 0;
+}
+/* Container */
+.container {
+    padding: 30px;
+}
+
+h1, h2 {
+    color: #6b4f4f;
+    text-align: center;
+}
+
+/* Products Section */
+.products {
+    display: flex;
+    justify-content: center;      /* center all cards horizontally */
+    gap: 20px;
+    flex-wrap: wrap;               /* wrap to next line on smaller screens */
+    margin-top: 30px;
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;            /* center text + image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%;
+    height: 180px;                /* fixed height for uniformity */
+    object-fit: cover;            /* maintain aspect ratio and crop if needed */
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Product Text */
+.product-card h4 {
+    margin: 8px 0;
+    color: #6b4f4f;
+}
+
+.product-card p {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+/* Product Button */
+.product-card button {
+    background-color: #6b4f4f;
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.product-card button:hover {
+    background-color: #502f2f;
+}
+
+/* =========================
+   ADMIN DASHBOARD STYLES
+   ========================= */
+
+
+/* Header */
+.admin-header {
+  background-color: #6b4f4f;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header button {
+  padding: 6px 12px;
+  background: white;
+  color: #6b4f4f;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.admin-header button:hover {
+  background-color: #fdeedc;
+}
+
+/* Main Dashboard */
+.dashboard {
+  padding: 30px 50px;
+}
+
+.dashboard h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6b4f4f;
+}
+
+/* Add Product Form */
+.add-product {
+  background-color: #fdeedc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.add-product h3 {
+  text-align: center;
+  color: #6b4f4f;
+  margin-bottom: 15px;
+}
+
+.add-product input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.add-product button {
+  background-color: #6b4f4f;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.add-product button:hover {
+  background-color: #502f2f;
+}
+
+/* Products Table */
+.products-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+.products-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fdeedc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.products-section th,
+.products-section td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.products-section th {
+  background-color: #6b4f4f;
+  color: white;
+}
+
+.products-section tr:last-child td {
+  border-bottom: none;
+}
+
+.products-section input {
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.products-section button {
+  background-color: #6b4f4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.products-section button:hover {
+  background-color: #502f2f;
+}
+
+.products-section img {
+  border-radius: 6px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us | CrochetCraft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="aboutUs.html">About Us</a>
+  </div>
+
+ <div class="auth-buttons">
+  <button id="loginBtn" onclick="openLogin()">Login</button>
+  <button id="signupBtn" onclick="openSignup()">Signup</button>
+  <button id="logoutBtn" onclick="handleLogout()" style="display:none;">Logout</button>
+</div>
+
+</header>
+
+
+<div class="container">
+  <h2>About Us</h2>
+  <p>
+    CrochetCraft was created to support handmade art and small creators.
+    Every product is made using quality yarn and unique crochet techniques.
+  </p>
+
+  <p>
+    Our mission is to provide beautiful, affordable, and sustainable crochet
+    items while promoting handmade craftsmanship.
+  </p>
+</div>
+<!-- LOGIN POPUP -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Login</h3>
+    <input id="loginEmail" type="email" placeholder="Email" required>
+    <input id="loginPassword" type="password" placeholder="Password" required>
+    <input id="loginRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleLogin()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- SIGNUP POPUP -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <h3>Signup</h3>
+    <input id="signupName" type="text" placeholder="Name" required>
+    <input id="signupEmail" type="email" placeholder="Email" required>
+    <input id="signupPassword" type="password" placeholder="Password" required>
+    <input id="signupRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleSignup()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+
+<script src="findex.js"></script>
+</body>
+</html>

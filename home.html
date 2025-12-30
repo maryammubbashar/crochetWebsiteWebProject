@@ -1,0 +1,142 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>CrochetCraft | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="aboutUs.html">About Us</a>
+  </div>
+  <div class="auth-buttons">
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openSignup()">Signup</button>
+  </div>
+</header>
+<div class="container">
+  <h1>Welcome to CrochetCraft</h1>
+  <p>
+    CrochetCraft is a handmade crochet store where love and creativity are
+    stitched into every product. From bags to toys, each item is carefully
+    crafted with passion.
+  </p>
+</div>
+<--LOGIN MODAL -->
+<!-- <div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Login</h3>
+    <input id="loginEmail" type="email" placeholder="Email" required>
+    <input id="loginPassword" type="password" placeholder="Password" required>
+    <input id="loginRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleLogin()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div> -->
+<!-- SIGNUP MODAL -->
+<!-- <div id="signupModal" class="modal"> -->
+  <!-- <div class="modal-content">
+    <h3>Signup</h3>
+    <input id="signupName" type="text" placeholder="Name" required>
+    <input id="signupEmail" type="email" placeholder="Email" required>
+    <input id="signupPassword" type="password" placeholder="Password" required>
+    <input id="signupRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleSignup()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+<script src="findex.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrochetCraft | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="aboutUs.html">About Us</a>
+  </div>
+
+ <div class="auth-buttons">
+  <button id="loginBtn" onclick="openLogin()">Login</button>
+  <button id="signupBtn" onclick="openSignup()">Signup</button>
+  <button id="logoutBtn" onclick="handleLogout()" style="display:none;">Logout</button>
+</div>
+
+</header>
+
+<div class="container">
+  <div class="hero-text">
+    <h1>Welcome to CrochetCraft</h1>
+  <h1 id="welcomeText" style="display: none;">Hello User</h1>
+    <p>
+      At CrochetCraft, every stitch tells a story. We believe in the beauty of handmade artistry, where love and creativity come together to craft unique items that brighten your day.
+      From cozy bags to charming toys, each piece is carefully handmade with high-quality yarn and attention to detail. Our products aren’t just accessories — they’re little works of art that carry warmth and personality.
+      Explore our collection, discover the joy of handmade creations, and bring home something special today. Because at CrochetCraft, every item is made with love, just for you.
+    </p>
+  </div>
+  <div class="hero-image">
+    <img src="images/heroimage.png" alt="Crochet Top">
+  </div>
+</div>
+
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Login</h3>
+    <input id="loginEmail" type="email" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <input id="loginRole" type="text" placeholder="Role (admin/user)">
+    <button onclick="handleLogin()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <h3>Signup</h3>
+    <input id="signupName" type="text" placeholder="Name">
+    <input id="signupEmail" type="email" placeholder="Email">
+    <input id="signupPassword" type="password" placeholder="Password">
+    <input id="signupRole" type="text" placeholder="Role (admin/user)">
+    <button onclick="handleSignup()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+
+<script>
+ const welcomeText = document.getElementById('welcomeText');
+const loginBtn = document.getElementById('loginBtn');
+const signupBtn = document.getElementById('signupBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+
+const username = localStorage.getItem('username');
+if(username) {
+    welcomeText.textContent = `Hello ${username}`;
+    welcomeText.style.display = 'block';
+    loginBtn.style.display = 'none';
+    signupBtn.style.display = 'none';
+    logoutBtn.style.display = 'inline-block';
+} else {
+    welcomeText.style.display = 'none';
+    loginBtn.style.display = 'inline-block';
+    signupBtn.style.display = 'inline-block';
+    logoutBtn.style.display = 'none';
+}
+
+</script>
+<script src="findex.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products | CrochetCraft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="aboutUs.html">About Us</a>
+  </div>
+
+  <div class="auth-buttons">
+    <button id="loginBtn" onclick="openLogin()">Login</button>
+    <button id="signupBtn" onclick="openSignup()">Signup</button>
+    <button id="logoutBtn" onclick="handleLogout()" style="display:none;">Logout</button>
+  </div>
+</header>
+
+<div class="container">
+  <h2>Our Crochet Products</h2>
+  <div class="products" id="productsContainer">
+    <!-- Products will be dynamically loaded here -->
+  </div>
+</div>
+
+<!-- LOGIN POPUP -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <h3>Login</h3>
+    <input id="loginEmail" type="email" placeholder="Email" required>
+    <input id="loginPassword" type="password" placeholder="Password" required>
+    <input id="loginRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleLogin()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- SIGNUP POPUP -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <h3>Signup</h3>
+    <input id="signupName" type="text" placeholder="Name" required>
+    <input id="signupEmail" type="email" placeholder="Email" required>
+    <input id="signupPassword" type="password" placeholder="Password" required>
+    <input id="signupRole" type="text" placeholder="Role (admin/user)" required>
+    <button onclick="handleSignup()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="findex.js"></script>
+<script>
+  // Fetch and display products dynamically
+  const token = localStorage.getItem('token');
+
+  async function fetchProducts() {
+    try {
+      const res = await fetch('http://localhost:3000/products', {
+        headers: token ? { Authorization: 'Bearer ' + token } : {}
+      });
+      const products = await res.json();
+      const container = document.getElementById('productsContainer');
+      container.innerHTML = '';
+
+      products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${p.image_url}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <p>Price: $${p.price}</p>
+          <button>Order Now</button>
+        `;
+        container.appendChild(card);
+      });
+    } catch (err) {
+      console.error('Failed to fetch products', err);
+    }
+  }
+
+  // Call this on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    fetchProducts();
+    updateAuthUI(); // from your existing findex.js
+  });
+</script>
+
+</body>
+</html>
